@@ -1,0 +1,103 @@
+PS C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate> npm test
+
+> taskflow-release-candidate@1.4.0-rc1 test
+> node --test
+
+✖ UNIT TC-13 DEF-04: Titel mit zwei Zeichen wird abgewiesen (3.345ms)
+✖ SERVICE TC-11 DEF-03: Fehlende Priorität wird als MEDIUM gespeichert (0.9883ms)
+✔ UNIT TC-09 DEF-02: Bob darf den Task von Alice nicht bearbeiten (0.3803ms)
+✖ API TC-08 DEF-01: Alice sieht nur ihre eigenen Tasks (115.1709ms)
+✔ API TC-07: Ungültiger Token liefert HTTP 401 (15.2571ms)
+✖ API TC-16 DEF-05: Ungültiges JSON liefert HTTP 400 ohne interne Details (13.6955ms)
+✔ REGRESSION TC-09: Alice darf ihren eigenen Task weiterhin bearbeiten (18.4329ms)
+✔ health endpoint liefert Status ok (107.5446ms)
+✔ gueltiger Login liefert Token (22.3295ms)
+✔ admin sieht die vorhandenen Tasks (12.6964ms)
+✔ gueltiger Task kann erstellt werden (15.8266ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 7
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 402.8076
+
+✖ failing tests:
+
+test at test\lb02.test.js:34:1
+✖ UNIT TC-13 DEF-04: Titel mit zwei Zeichen wird abgewiesen (3.345ms)
+  AssertionError [ERR_ASSERTION]: Ein Titel mit weniger als drei Zeichen muss einen Validierungsfehler erzeugen
+      at TestContext.<anonymous> (C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate\test\lb02.test.js:45:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test\lb02.test.js:55:1
+✖ SERVICE TC-11 DEF-03: Fehlende Priorität wird als MEDIUM gespeichert (0.9883ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'LOW' !== 'MEDIUM'
+  
+      at TestContext.<anonymous> (C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate\test\lb02.test.js:70:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'LOW',
+    expected: 'MEDIUM',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\lb02.test.js:99:1
+✖ API TC-08 DEF-01: Alice sieht nur ihre eigenen Tasks (115.1709ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  2 !== 1
+  
+      at C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate\test\lb02.test.js:114:12
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async withServer (C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate\test\lb02.test.js:22:5)
+      at async TestContext.<anonymous> (C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate\test\lb02.test.js:100:3)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\lb02.test.js:148:1
+✖ API TC-16 DEF-05: Ungültiges JSON liefert HTTP 400 ohne interne Details (13.6955ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 400
+  
+      at C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate\test\lb02.test.js:166:12
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async withServer (C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate\test\lb02.test.js:22:5)
+      at async TestContext.<anonymous> (C:\Users\sLa\Downloads\Archive\TaskFlow_ReleaseCandidate\test\lb02.test.js:149:3)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

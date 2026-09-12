@@ -1,0 +1,6 @@
+Risiko-ID;Risiko/Funktion;Wahrscheinlichkeit_1-3;Auswirkung_1-3;Risikowert;Prioritaet;Geplante_Tests;Begruendung
+R-01;Mitarbeiter kann fremde Tasks sehen;3;3;9;Hoch;API- und Security-Test mit Alice und Bob sowie automatisierter Integrationstest;Verletzung der Vertraulichkeit und der rollenbasierten Zugriffskontrolle
+R-02;Mitarbeiter kann fremde Tasks bearbeiten;3;3;9;Hoch;API- und Security-Test für PATCH auf fremden Task sowie Service-Test der Berechtigungslogik;Fremde Daten könnten unberechtigt verändert werden
+R-03;Kontosperrung nach fünf Fehlversuchen funktioniert nicht korrekt;3;3;9;Hoch;Grenzwerttest mit fünf und sechs fehlerhaften Loginversuchen sowie erfolgreichem Login;Ein Angreifer könnte weitere Passwörter ausprobieren und die Sicherheitsanforderung wird verletzt
+R-04;Ungültige Taskdaten werden akzeptiert;3;2;6;Hoch;Unit-Tests und API-Tests für fehlenden zu kurzen und zu langen Titel ungültige Priorität und vergangenes Datum;Fehlerhafte Daten können gespeichert und weiterverarbeitet werden
+R-05;Fehlerantworten enthalten interne Informationen;3;3;9;Hoch;API-Test mit ungültigem JSON und Prüfung des Response-Bodys;Stacktraces und Dateipfade können Angreifern Informationen über die Implementierung liefern

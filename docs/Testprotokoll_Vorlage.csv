@@ -1,0 +1,15 @@
+Test-ID;Tester;Datum_Uhrzeit;Version;Umgebung;Soll;Ist;Resultat_PASS_FAIL;Defect-ID;Evidenz
+TC-13;Sladjan;12.09.2026;1.4.0-rc1;Windows Node.js 20+;Titel mit zwei Zeichen wird abgewiesen;Keine Validierungsfehlermeldung erzeugt;FAIL;DEF-04;evidenz/npm_test_vor_fix.txt
+TC-11;Sladjan;12.09.2026;1.4.0-rc1;Windows Node.js 20+;Fehlende Priorität ergibt MEDIUM;Task wurde mit LOW erstellt;FAIL;DEF-03;evidenz/npm_test_vor_fix.txt
+TC-09;Sladjan;12.09.2026;1.4.0-rc1;Windows Node.js 20+;Bob darf Alices Task nicht bearbeiten;Berechtigungsprüfung liefert true;FAIL;DEF-02;evidenz/npm_test_vor_fix.txt
+TC-08;Sladjan;12.09.2026;1.4.0-rc1;Windows Node.js 20+;Alice sieht nur ihren eigenen Task;Alice erhält beide vorhandenen Tasks;FAIL;DEF-01;evidenz/npm_test_vor_fix.txt
+TC-07;Sladjan;12.09.2026;1.4.0-rc1;Windows Node.js 20+;Ungültiger Token liefert HTTP 401;HTTP 401 und keine Taskdaten;PASS;;evidenz/npm_test_vor_fix.txt
+TC-16;Sladjan;12.09.2026;1.4.0-rc1;Windows Node.js 20+;Ungültiges JSON liefert HTTP 400 ohne interne Details;HTTP 500 mit internen Details;FAIL;DEF-05;evidenz/npm_test_vor_fix.txt
+TC-09-REG;Sladjan;12.09.2026;1.4.0-rc1;Windows Node.js 20+;Alice darf ihren eigenen Task bearbeiten;HTTP 200 und Status wurde auf DONE geändert;PASS;;evidenz/npm_test_vor_fix.txt
+TC-09-RETEST;Sladjan;12.09.2026;1.4.0-rc1 nach DEF-02 Fix;Windows Node.js 20+;Bob darf Alices Task nicht bearbeiten;Berechtigungsprüfung liefert false und API verweigert die Bearbeitung;PASS;DEF-02;evidenz/npm_test_nach_def02_fix.txt
+TC-09-REG;Sladjan;12.09.2026;1.4.0-rc1 nach DEF-02 Fix;Windows Node.js 20+;Alice darf ihren eigenen Task weiterhin bearbeiten;Alice kann t1 erfolgreich auf DONE setzen;PASS;;evidenz/npm_test_nach_def02_fix.txt
+TC-08;Sladjan;12.09.2026;1.4.0-rc1 nach DEF-02 Fix;Windows Postman;Alice darf nur eigene Tasks sehen;HTTP 200 enthält t1 von Alice und t2 von Bob;FAIL;DEF-01;evidenz/API-06-alice-sieht-fremde-tasks.png
+TC-07;Sladjan;12.09.2026;1.4.0-rc1 nach DEF-02 Fix;Windows Postman;Ungültiger Token liefert HTTP 401 und keine Taskdaten;HTTP 401 mit Fehlermeldung Nicht authentifiziert;PASS;;evidenz/API-05-token-ungueltig.png
+TC-09;Sladjan;12.09.2026;1.4.0-rc1 nach DEF-02 Fix;Windows Postman;Bob darf Alices Task t1 nicht bearbeiten;HTTP 403 mit Zugriff verweigert und keine Änderung durchgeführt;PASS;DEF-02;evidenz/API-07-bob-fremder-task.png und evidenz/API-07-bob-token.png
+TC-10;Sladjan;12.09.2026;1.4.0-rc1 nach DEF-02 Fix;Windows Postman;Administrator darf den Task von Alice bearbeiten;HTTP 200 und Status von t1 wurde auf DONE geändert während ownerId u1 erhalten blieb;PASS;;evidenz/API-08-admin-task-body.png und evidenz/API-08-admin-token.png
+TC-15;Sladjan;12.09.2026;1.4.0-rc1 nach DEF-02 Fix;Windows Postman;Task mit ungültiger Priorität wird abgewiesen;HTTP 400 mit Validierungsfehler priority ist ungueltig;PASS;;evidenz/API-09-prioritaet-ungueltig.png
