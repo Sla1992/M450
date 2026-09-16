@@ -1,4 +1,4 @@
-# Korrektur und Retest DEF-02
+# Korrektur und Retest def02
 
 ## Beschreibung
 
@@ -42,4 +42,4 @@ Zusätzlich wurde mit Postman geprüft, dass Bob beim Zugriff auf Alices Task HT
 
 ## Ergebnis
 
-DEF-02 wurde behoben, retestet und durch einen Regressionstest abgesichert. Es wurden keine neuen Nebenwirkungen festgestellt.
+Def02 wurde behoben, retestet und durch einen Regressionstest abgesichert. Es wurden keine neuen Nebenwirkungen festgestellt.
