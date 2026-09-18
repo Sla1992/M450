@@ -30,7 +30,7 @@ Es gab keine gemeinsamen Arbeiten, da die LB-02 als Einzelarbeit durchgeführt w
 
 Die Teststrategie, Risikopriorisierung und Release-Entscheidung wurden selbstständig erarbeitet. Sicherheitsrisiken bezüglich Authentifizierung, Autorisierung und Offenlegung interner Informationen erhielten die höchste Priorität.
 
-Aufgrund der offenen Defects DEF-01 und DEF-05 wurde die Entscheidung **NO-GO** getroffen.
+Aufgrund der offenen High-Severity-Defects DEF-01, DEF-05, DEF-06 und DEF-07 wurde die Entscheidung **NO-GO** getroffen.
 
 ## Eigener Beitrag
 
@@ -41,9 +41,9 @@ Ich habe den vollständigen Projektauftrag selbstständig bearbeitet. Dazu gehö
 - Erstellung von 16 manuellen Testfällen
 - Implementierung von sieben neuen automatisierten Tests
 - Durchführung und Dokumentation der automatisierten Tests
-- Durchführung der API- und Security-Tests mit Postman
+- Durchführung von dreizehn API-, Security- und Grenzwerttests mit Postman
 - strukturiertes Code Review
-- Reproduktion und Dokumentation von DEF-01 bis DEF-05
+- Reproduktion und Dokumentation von DEF-01 bis DEF-07
 - Ursachenanalyse und Korrektur von DEF-02
 - Durchführung von Retest und Regressionstest
 - Sicherung der Testevidenzen
